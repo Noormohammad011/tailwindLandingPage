@@ -7,18 +7,19 @@ import { register } from '../actions/userActions'
 import LoaderComponent from '../partials/LoaderComponent'
 
 function SignUp() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
-  const [message, setMessage] = useState('')
+  
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
+    const [message, setMessage] = useState('')
 
   const dispatch = useDispatch()
 
   const location = useLocation()
   const history = useHistory()
 
-  const redirect = location.search ? location.search.split('=')[1] : '/'
+   const redirect = location.search ? location.search.split('=')[1] : '/'
 
   const userRegister = useSelector((state) => state.userRegister)
   const { error, loading, userInfo } = userRegister
@@ -32,7 +33,7 @@ function SignUp() {
   const submitHandler = (e) => {
     e.preventDefault()
 
-    if (password === !confirmPassword) {
+    if (password !==confirmPassword) {
       setMessage('Passwords do not match')
     } else {
       dispatch(register(name, email, password))
