@@ -14,7 +14,7 @@ import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Profile from './pages/Profile';
-
+import UserListScreen from './pages/UserListScreen';
 
 function App() {
 
@@ -48,8 +48,11 @@ function App() {
         <Route path="/signup">
           <SignUp />
         </Route>
-          <Route path="/profile">
+        <Route path="/profile">
           <Profile />
+        </Route>
+        <Route path='/admin/userlist'>
+          <UserListScreen/>
         </Route>
         
       </Switch>
